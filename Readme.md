@@ -1,11 +1,11 @@
 # Cocos Creator Reactive 
 This repo will provide reactive features for Cocos Creator projects.
-By using this lib you are able to bind data to the CC component in an easy way.
+By using this lib you can bind data to the CC component in an easy way.
 
 ## Main features
 - Easy to use in any project
-- Will remove a lots of boilerplate codes
-- Supporting 2 way binding
+- Will remove lots of boilerplate codes
+- Supporting 2-way bindings
 - Supporting in editor loops
 - Nested Object Binding is supported
 - Label, RichText, EditBox, Slider and ProgressBar are supported
@@ -15,30 +15,30 @@ By using this lib you are able to bind data to the CC component in an easy way.
 
 ## Limitations
 - Arrays are stateless
-- A few memomry managment is required 
+- A few memory management is required 
 
 ## Instruction
 
-To utilize reactivity in your projects, you just need copy/paste Core folder in your projects.
+To utilize reactivity in your projects, you just need to copy/paste the Core folder into your projects.
 
 ### *Core Files*
 - `ReactiveDecorator.Code.ts` provides `@Reactive()` decorator for reactive properties.
 
-- `Reactivity.Code.ts` this the heart of reactivity, place where all procedures related to reactivity are happening.
+- `Reactivity.Code.ts` is the heart of reactivity, a place where all procedures related to reactivity are happening.
 
-- `SchemeBase.Code.ts` all class which yopu need to be reactive must extend this class.
+- `SchemeBase.Code.ts` all classes which you need to be reactive must extend this class.
 
-- `SchemeBinderComponent.Code.ts` this component must be added to the nodes which need to present data and binding.
+- `SchemeBinderComponent.Code.ts` This component must be added to the nodes which need to present data and binding.
 
 ### *Scheme Classes*
 All classes that have the reactivity features are called ***Scheme***, to make a class Scheme you must extend `SchemeBase.Code.ts`. 
-In fact Scheme Classes are responsible for binding data to view, like what ViewModel in MVVM design pattern.
-To use Schemes you need to follow the instruction correctly.
+Scheme Classes are responsible for binding data to view, like what ViewModel in the MVVM design pattern.
+To use Schemes you need to follow the instructions correctly.
 
 
-## Let's check simplest example!
+## Let's check the simplest example!
 ### 1. Define a scheme class 
-```
+```typescript
 import { makeReactive } from "../Core/Reactivity.Code";
 import { SchemeBase } from "../Core/SchemeBase.Code";
 class MySimplestScheme extends SchemeBase{
@@ -58,7 +58,7 @@ class MySimplestScheme extends SchemeBase{
 
 ### 2. Initiate and use `MySimplestScheme` in a component
 
-```
+```typescript
 import { SchemeBase } from './Core/SchemeBase.Code';
 import { MySimplestScheme } from './MySimplestScheme';
 
@@ -78,20 +78,20 @@ export class BindTestComponentCode extends Component {
 }
 ```
 
-### 3. Bind scheme to a Label component in CC editor
-It is so simple, add `SchemeBinderComponent.Code.ts` to a label component like following image
+### 3. Bind scheme to a Label component in the CC editor
+It is so simple, add `SchemeBinderComponent.Code.ts` to a label component like the following image
 ![](images/label-bind.png?raw=true)
 
 ### That is it!!
-Now anywhere in your entire project when `_mySimplestScheme.name` changed, the text of Lable will change!
+Now anywhere in your entire project when `_mySimplestScheme.name` changes, the text of Lable will change!
 
 ## Advanced Usages
-You can check full features by running this project!
+You can check the full features by running this project!
 
 ### Important Notes
-- If you use `$` at the begining the name of SchemeName which in our Simplest example was `myFirstScheme` will make the scheme permanent and you CANN'T destroy it when your app is running!
+- If you use `$` at the beginning the name of SchemeName which in our Simplest example was `myFirstScheme` will make the scheme permanent and you CANN'T destroy it when your app is running!
 
-- `{{$$}}` use this in formatter section of `SchemeBinderComponent` to place the value of property.
+- `{{$$}}` use this in formatter section of `SchemeBinderComponent` to place the value of the property.
 
 - `Your score is <color=#ff0000>{{($$).toFixed(3)}}</color> !` this is an advanced sample of formatting
 
