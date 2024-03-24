@@ -8,7 +8,7 @@ By using this lib you can bind data to the CC component in an easy way.
 - Supporting 2-way bindings
 - Supporting in editor loops
 - Nested Object Binding is supported
-- Label, RichText, EditBox, Slider and ProgressBar are supported
+- Label, RichText, EditBox, Slider, Toggle and ProgressBar are supported
 - Formatting text is supported for Label and RichText
 - Using ES6 Proxy features
 - The code has been written as simple as possible  
