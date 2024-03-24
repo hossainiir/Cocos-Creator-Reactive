@@ -1,4 +1,4 @@
-import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider } from 'cc';
+import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle } from 'cc';
 import { RegisterComponent, UnregisterComponent, UpdateScheme } from './Reactivity.Code';
 const { ccclass, property } = _decorator;
 
@@ -11,8 +11,8 @@ export enum EnBinderType{
 
 @ccclass('SchemeBinderComponent')
 export class SchemeBinderComponent extends Component {
-	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | null = null;
-	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider];
+	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | null = null;
+	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
 
 	@property({
 		type:CCString,
@@ -71,7 +71,8 @@ export class SchemeBinderComponent extends Component {
 
 	private _initBinder(){
 		this._detectComponentType();
-
+		console.log(typeof this._componentType);
+		
 		switch(this._componentType){
 			case EditBox:
 				this.node.on(EditBox.EventType.TEXT_CHANGED,this.onTextChanged, this);
@@ -79,7 +80,10 @@ export class SchemeBinderComponent extends Component {
 			case Slider:
 				this.node.on("slide",this.onSlide, this);
 				break
-		}
+			case Toggle:
+				this.node.on("toggle",this.onToggle,this);
+				break;
+			}
 	}
 
 	private _initRepeater(){
@@ -96,7 +100,7 @@ export class SchemeBinderComponent extends Component {
 				break;
 			case Slider:
 				this.node.on("slide",this.onSlide, this);
-				break
+				break;
 		}
 	}
 
@@ -157,7 +161,14 @@ export class SchemeBinderComponent extends Component {
 			case Slider:
 				this.node.getComponent(Slider).progress = a;
 				break;
+			case Toggle:
+				this.node.getComponent(Toggle).isChecked = a;
+				break;
 		}
+	}
+
+	private onToggle(toggle: Toggle){
+		UpdateScheme(this.SchemeName,this.PropertyName,toggle.isChecked);
 	}
 
 	private _manipulate(value:any):any{
