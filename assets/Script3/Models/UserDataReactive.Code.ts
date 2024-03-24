@@ -29,6 +29,9 @@ export class UserDataScheme extends SchemeBase implements IUserData {
   @Reactive('achievements')
   achievements: AchievementModel[]=[];
 
+  @Reactive('visibility')
+  visibility: boolean = true;
+
   @Reactive('selectedAchievement')
   selectedAchievement: AchievementModel = new AchievementModel();
 

@@ -96,6 +96,10 @@ export class BinderComponentCode extends Component {
 		SchemeBase.update(this.data,{selectedAchievement:a.target.data});
 		// this.data.selectedAchievement.name = a.target.data.name;//a.target.data;
 	}
+
+	onVisibilityClick(){
+		this.data.visibility = !this.data.visibility;
+	}
 }
 
 

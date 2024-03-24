@@ -5,7 +5,8 @@ const { ccclass, property } = _decorator;
 export enum EnBinderType{
 	Binder,
 	Repeater,
-	ItemBinder
+	ItemBinder,
+	Visibility
 }
 
 @ccclass('SchemeBinderComponent')
@@ -129,6 +130,9 @@ export class SchemeBinderComponent extends Component {
 			case EnBinderType.Repeater:
 				this._updateRepeater(value);
 				break;
+			case EnBinderType.Visibility:
+				this._updateVisibility(value);
+				break;
 		}
 	}
 
@@ -189,6 +193,10 @@ export class SchemeBinderComponent extends Component {
 			a.active = true;
 			this.ItemContainer.addChild(a);      
 		});
+	}
+
+	private _updateVisibility(value:any){
+		this.node.active = value;
 	}
 
 	onDestroy(): void {
