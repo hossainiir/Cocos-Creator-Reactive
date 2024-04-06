@@ -1,5 +1,6 @@
 import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle } from 'cc';
 import { RegisterComponent, UnregisterComponent, UpdateScheme } from './Reactivity.Code';
+import { DynamicBindBaseCode } from './DynamicBindBase.Code';
 const { ccclass, property } = _decorator;
 
 export enum EnBinderType{
@@ -9,18 +10,48 @@ export enum EnBinderType{
 	Visibility
 }
 
+export enum EnBindMode{
+	Static,
+	Dynamic
+}
+
 @ccclass('SchemeBinderComponent')
 export class SchemeBinderComponent extends Component {
 	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | null = null;
 	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
 
+	@property({type:Enum(EnBindMode)})
+	BindMode:EnBindMode=EnBindMode.Static;
+
+	@property({type:DynamicBindBaseCode,
+		visible:function(this:SchemeBinderComponent){
+			return this.BindMode == EnBindMode.Dynamic;
+		}
+	})
+	Target:DynamicBindBaseCode|null=null;
+
 	@property({
 		type:CCString,
 		visible:function(this:SchemeBinderComponent){
-			return this.BinderType != EnBinderType.ItemBinder
+			return (this.BinderType != EnBinderType.ItemBinder) && this.BindMode == EnBindMode.Static;
 		}
 	})
-	SchemeName:string="";
+	public get SchemeName() : string {
+		return this.BindMode == EnBindMode.Static ? this._schemeName : this.Target[this.SchemeNameHolder];
+	}
+	public set SchemeName(v : string) {
+		this._schemeName = v;
+	}
+	@property
+	_schemeName:string="";
+	
+	@property({
+		type:CCString,
+		visible:function(this:SchemeBinderComponent){
+			return (this.BinderType != EnBinderType.ItemBinder) && this.BindMode == EnBindMode.Dynamic;
+		}
+	})
+	SchemeNameHolder:string="";
 
 	@property(CCString)
 	PropertyName:string="";
@@ -54,8 +85,12 @@ export class SchemeBinderComponent extends Component {
 	})
 	ItemContainer:Node=null;
 
-
 	protected onLoad(): void {
+		if(this.Target){
+			console.log(this.Target);
+			console.log(this._schemeName);
+		}
+		
 		switch(this.BinderType){
 			case EnBinderType.Binder:
 				this._initBinder();
