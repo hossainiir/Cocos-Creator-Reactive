@@ -21,6 +21,8 @@ export class SchemeBinderComponent extends Component {
 	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | typeof Sprite | null = null;
 	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
 	private static readonly _supportedColorComponents:typeof Component[]=[Label,Sprite];
+	@property({type:Enum(EnBinderType)})
+	BinderType:EnBinderType=EnBinderType.Binder;
 
 	@property({type:Enum(EnBindMode)})
 	BindMode:EnBindMode=EnBindMode.Static;
@@ -31,9 +33,6 @@ export class SchemeBinderComponent extends Component {
 		}
 	})
 	Target:DynamicBindBaseCode|null=null;
-
-	@property({type:Enum(EnBinderType)})
-	BinderType:EnBinderType=EnBinderType.Binder;
 
 	@property({
 		type:CCString,
