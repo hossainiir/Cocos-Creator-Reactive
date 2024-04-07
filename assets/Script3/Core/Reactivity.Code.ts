@@ -5,21 +5,26 @@ const SchemeBinderComponents : Map<string,SchemeBinderComponentHolder> = new Map
 
 export function RegisterComponent(component:SchemeBinderComponent){
   let key = `${component.SchemeName}.${component.PropertyName}`;
-  let r = SchemeBinderComponents.get(key);
-  if(!r){
-    SchemeBinderComponents.set(key,new SchemeBinderComponentHolder());
-  }
-  r = SchemeBinderComponents.get(key);
-  let c = r.components.get(component.uuid);
-  if(!c){
-    r.components.set(component.uuid,component);
+  try{
+    let r = SchemeBinderComponents.get(key);
+    if(!r){
+      SchemeBinderComponents.set(key,new SchemeBinderComponentHolder());
+    }
+    r = SchemeBinderComponents.get(key);
+    let c = r.components.get(component.uuid);
+    if(!c){
+      r.components.set(component.uuid,component);
+    }
+
+    let rc = schemes.get(component.SchemeName);
+    let path = component.PropertyName.split(".");
+    let a = rc;
+    path.forEach((ch)=>a = a[ch]);
+    component.Update(a);    
+  }catch(err){
+    throw key;
   }
 
-  let rc = schemes.get(component.SchemeName);
-  let path = component.PropertyName.split(".");
-  let a = rc;
-  path.forEach((ch)=>a = a[ch]);
-  component.Update(a);
 }
 
 export function UnregisterComponent(component:SchemeBinderComponent){
@@ -32,7 +37,6 @@ export function UnregisterScheme(SchemeName:string){
     throw `${SchemeName} is defined as permanent, it is not destroyable!`
 
   schemes.delete(SchemeName);
-  console.log(schemes);
   
   for (const key of SchemeBinderComponents.keys()) {
     // Check if the key starts with "UserData"
@@ -60,7 +64,7 @@ export function UpdateScheme(SchemeName:string,property:string,value:any){
           return;
       }
   }
-
+  console.log(SchemeName,property, value);
   // Update the nested property
   const lastKey = keys[keys.length - 1];
   nestedObj[lastKey] = value;

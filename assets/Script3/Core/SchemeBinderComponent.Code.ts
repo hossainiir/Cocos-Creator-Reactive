@@ -1,4 +1,4 @@
-import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle } from 'cc';
+import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle, Sprite, Color } from 'cc';
 import { RegisterComponent, UnregisterComponent, UpdateScheme } from './Reactivity.Code';
 import { DynamicBindBaseCode } from './DynamicBindBase.Code';
 const { ccclass, property } = _decorator;
@@ -7,7 +7,8 @@ export enum EnBinderType{
 	Binder,
 	Repeater,
 	ItemBinder,
-	Visibility
+	Visibility,
+	Color
 }
 
 export enum EnBindMode{
@@ -17,7 +18,7 @@ export enum EnBindMode{
 
 @ccclass('SchemeBinderComponent')
 export class SchemeBinderComponent extends Component {
-	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | null = null;
+	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | typeof Sprite | null = null;
 	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
 
 	@property({type:Enum(EnBindMode)})
@@ -29,6 +30,9 @@ export class SchemeBinderComponent extends Component {
 		}
 	})
 	Target:DynamicBindBaseCode|null=null;
+
+	@property({type:Enum(EnBinderType)})
+	BinderType:EnBinderType=EnBinderType.Binder;
 
 	@property({
 		type:CCString,
@@ -61,13 +65,10 @@ export class SchemeBinderComponent extends Component {
 		multiline:true,
 		visible:function( this: SchemeBinderComponent ) { 
 			this._detectComponentType();
-			return this._componentType == Label || this._componentType == RichText; 
+			return (this._componentType == Label || this._componentType == RichText) && this.BinderType != EnBinderType.Color; 
 		}
 	})
 	FormatterText:string="";
-
-	@property({type:Enum(EnBinderType)})
-	BinderType:EnBinderType=EnBinderType.Binder;
 
 	@property({
 		type:Node,
@@ -86,12 +87,8 @@ export class SchemeBinderComponent extends Component {
 	ItemContainer:Node=null;
 
 	protected onLoad(): void {
-		if(this.Target){
-			console.log(this.Target);
-			console.log(this._schemeName);
-		}
-		
 		switch(this.BinderType){
+			case EnBinderType.Color:
 			case EnBinderType.Binder:
 				this._initBinder();
 				break;
@@ -106,8 +103,6 @@ export class SchemeBinderComponent extends Component {
 
 	private _initBinder(){
 		this._detectComponentType();
-		console.log(typeof this._componentType);
-		
 		switch(this._componentType){
 			case EditBox:
 				this.node.on(EditBox.EventType.TEXT_CHANGED,this.onTextChanged, this);
@@ -145,6 +140,10 @@ export class SchemeBinderComponent extends Component {
 			if(a)
 				this._componentType = c;
 		});
+		//Most of ui component such as EditBox, Toggle, ProgressBar and Slider have Sprite Component, so here we must check for Sprite component.
+		if(!this._componentType){
+			this._componentType = Sprite;
+		}
 	}
 
 	start() {
@@ -171,6 +170,9 @@ export class SchemeBinderComponent extends Component {
 				break;
 			case EnBinderType.Visibility:
 				this._updateVisibility(value);
+				break;
+			case EnBinderType.Color:
+				this._updateColor(value);
 				break;
 		}
 	}
@@ -243,6 +245,14 @@ export class SchemeBinderComponent extends Component {
 
 	private _updateVisibility(value:any){
 		this.node.active = value;
+	}
+
+	private _updateColor(value:string|Color){
+		let color = value instanceof Color ? value : new Color().fromHEX(value);
+		if(this._componentType == Sprite)
+			this.node.getComponent(Sprite).color = color;
+		else if(this._componentType == Label)
+			this.node.getComponent(Label).color = color;
 	}
 
 	onDestroy(): void {
