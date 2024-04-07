@@ -20,6 +20,7 @@ export enum EnBindMode{
 export class SchemeBinderComponent extends Component {
 	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | typeof Sprite | null = null;
 	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
+	private static readonly _supportedColorComponents:typeof Component[]=[Label,Sprite];
 
 	@property({type:Enum(EnBindMode)})
 	BindMode:EnBindMode=EnBindMode.Static;
@@ -135,14 +136,20 @@ export class SchemeBinderComponent extends Component {
 	}
 
 	private _detectComponentType(){
-		SchemeBinderComponent._supportedComponents.forEach((c)=>{
-			let a = this.getComponent(c);
-			if(a)
-				this._componentType = c;
-		});
-		//Most of ui component such as EditBox, Toggle, ProgressBar and Slider have Sprite Component, so here we must check for Sprite component.
-		if(!this._componentType){
+		if(this.BinderType == EnBinderType.Color){
+			//Most of ui component such as EditBox, Toggle, ProgressBar and Slider have Sprite Component, so here we must check for Sprite component.
 			this._componentType = Sprite;
+			SchemeBinderComponent._supportedColorComponents.forEach((c)=>{
+				let a = this.getComponent(c);
+				if(a)
+					this._componentType = c;
+			});
+		}else{
+			SchemeBinderComponent._supportedComponents.forEach((c)=>{
+				let a = this.getComponent(c);
+				if(a)
+					this._componentType = c;
+			});	
 		}
 	}
 
