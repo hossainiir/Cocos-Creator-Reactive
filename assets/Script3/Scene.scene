@@ -52,7 +52,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 261
+      "__id__": 267
     },
     "_id": "9bde5136-1863-4d95-a379-0cde3d0f59ca"
   },
@@ -73,6 +73,9 @@
       },
       {
         "__id__": 242
+      },
+      {
+        "__id__": 248
       }
     ],
     "_active": true,
@@ -81,13 +84,13 @@
         "__id__": 156
       },
       {
-        "__id__": 258
+        "__id__": 264
       },
       {
-        "__id__": 259
+        "__id__": 265
       },
       {
-        "__id__": 260
+        "__id__": 266
       }
     ],
     "_prefab": null,
@@ -545,9 +548,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -880,9 +883,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "address.country",
@@ -1306,9 +1309,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "address.country",
@@ -1664,9 +1667,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "progress",
@@ -1965,9 +1968,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "progress",
@@ -2131,9 +2134,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "progress",
@@ -2416,9 +2419,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 2,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 2,
     "_schemeName": "",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -2535,9 +2538,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 2,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 2,
     "_schemeName": "",
     "SchemeNameHolder": "",
     "PropertyName": "points",
@@ -2968,9 +2971,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 1,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 1,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "achievements",
@@ -3138,9 +3141,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -3304,9 +3307,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "age",
@@ -3612,9 +3615,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "address.city",
@@ -4038,9 +4041,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "address.city",
@@ -4190,9 +4193,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "progress",
@@ -4356,9 +4359,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -4782,9 +4785,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -4948,9 +4951,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "selectedAchievement.name",
@@ -5320,9 +5323,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.food.amount",
@@ -5486,11 +5489,11 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": {
       "__id__": 156
     },
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.food.storage",
@@ -5676,9 +5679,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.food.production",
@@ -5842,9 +5845,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.food.safe",
@@ -6266,9 +6269,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.steel.amount",
@@ -6432,9 +6435,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.steel.storage",
@@ -6598,9 +6601,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.steel.production",
@@ -6764,9 +6767,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "resources.steel.safe",
@@ -7555,9 +7558,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 3,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 3,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "visibility",
@@ -7688,9 +7691,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "visibility",
@@ -7997,9 +8000,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "visibility",
@@ -8188,9 +8191,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 4,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 4,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "labelColor",
@@ -8209,9 +8212,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -8342,9 +8345,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 4,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 4,
     "_schemeName": "$UserData",
     "SchemeNameHolder": "",
     "PropertyName": "spriteColor",
@@ -8459,6 +8462,179 @@
   },
   {
     "__type__": "cc.Node",
+    "_name": "SP Opacity Test",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 243
+      },
+      {
+        "__id__": 244
+      },
+      {
+        "__id__": 245
+      },
+      {
+        "__id__": 246
+      },
+      {
+        "__id__": 247
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -226.38,
+      "y": -160.59,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_mobility": 0,
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "c5zhlFRXxGpYmPPq5I45BT"
+  },
+  {
+    "__type__": "cc.UITransform",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 30,
+      "height": 30
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "a96I5ASgJNRbqMxyuoaq6c"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_spriteFrame": {
+      "__uuid__": "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "bdfIzl5TJDiYzTlz1hd8gD"
+  },
+  {
+    "__type__": "d20a2otqL5L4Z+1+ZDQ8lRh",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "BinderType": 5,
+    "BindMode": 0,
+    "Target": null,
+    "_schemeName": "$UserData",
+    "SchemeNameHolder": "",
+    "PropertyName": "opacity",
+    "FormatterText": "",
+    "ItemTemplate": null,
+    "ItemContainer": null,
+    "_id": "f4ScIht49AgJaqbvYBT7OO"
+  },
+  {
+    "__type__": "cc.UIOpacity",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_opacity": 255,
+    "_id": "59RLxXDnhOV59nZD5egkIQ"
+  },
+  {
+    "__type__": "d20a2otqL5L4Z+1+ZDQ8lRh",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "BinderType": 4,
+    "BindMode": 0,
+    "Target": null,
+    "_schemeName": "$UserData",
+    "SchemeNameHolder": "",
+    "PropertyName": "spriteColor",
+    "FormatterText": "",
+    "ItemTemplate": null,
+    "ItemContainer": null,
+    "_id": "3doLPtSXhL/Y38QfG8wOCw"
+  },
+  {
+    "__type__": "cc.Node",
     "_name": "Temporary",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -8467,19 +8643,19 @@
     },
     "_children": [
       {
-        "__id__": 243
+        "__id__": 249
       },
       {
-        "__id__": 247
+        "__id__": 253
       },
       {
-        "__id__": 252
+        "__id__": 258
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 257
+        "__id__": 263
       }
     ],
     "_prefab": null,
@@ -8518,19 +8694,19 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
-      "__id__": 242
+      "__id__": 248
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 244
+        "__id__": 250
       },
       {
-        "__id__": 245
+        "__id__": 251
       },
       {
-        "__id__": 246
+        "__id__": 252
       }
     ],
     "_prefab": null,
@@ -8569,7 +8745,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 243
+      "__id__": 249
     },
     "_enabled": true,
     "__prefab": null,
@@ -8591,7 +8767,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 243
+      "__id__": 249
     },
     "_enabled": true,
     "__prefab": null,
@@ -8630,7 +8806,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 243
+      "__id__": 249
     },
     "_enabled": true,
     "__prefab": null,
@@ -8660,22 +8836,22 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
-      "__id__": 242
+      "__id__": 248
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 248
+        "__id__": 254
       },
       {
-        "__id__": 249
+        "__id__": 255
       },
       {
-        "__id__": 250
+        "__id__": 256
       },
       {
-        "__id__": 251
+        "__id__": 257
       }
     ],
     "_prefab": null,
@@ -8714,7 +8890,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 247
+      "__id__": 253
     },
     "_enabled": true,
     "__prefab": null,
@@ -8736,7 +8912,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 247
+      "__id__": 253
     },
     "_enabled": true,
     "__prefab": null,
@@ -8775,7 +8951,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 247
+      "__id__": 253
     },
     "_enabled": true,
     "__prefab": null,
@@ -8805,13 +8981,13 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 247
+      "__id__": 253
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -8826,22 +9002,22 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
-      "__id__": 242
+      "__id__": 248
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 253
+        "__id__": 259
       },
       {
-        "__id__": 254
+        "__id__": 260
       },
       {
-        "__id__": 255
+        "__id__": 261
       },
       {
-        "__id__": 256
+        "__id__": 262
       }
     ],
     "_prefab": null,
@@ -8880,7 +9056,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 252
+      "__id__": 258
     },
     "_enabled": true,
     "__prefab": null,
@@ -8902,7 +9078,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 252
+      "__id__": 258
     },
     "_enabled": true,
     "__prefab": null,
@@ -8941,7 +9117,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 252
+      "__id__": 258
     },
     "_enabled": true,
     "__prefab": null,
@@ -8971,13 +9147,13 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 252
+      "__id__": 258
     },
     "_enabled": true,
     "__prefab": null,
+    "BinderType": 0,
     "BindMode": 0,
     "Target": null,
-    "BinderType": 0,
     "_schemeName": "UserData",
     "SchemeNameHolder": "",
     "PropertyName": "name",
@@ -8992,7 +9168,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 242
+      "__id__": 248
     },
     "_enabled": true,
     "__prefab": null,
@@ -9065,32 +9241,32 @@
     "_enabled": true,
     "__prefab": null,
     "TempNode": {
-      "__id__": 242
+      "__id__": 248
     },
     "_id": "d2Pe5lNGhISZM1NlI83m12"
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 262
+      "__id__": 268
     },
     "shadows": {
-      "__id__": 263
+      "__id__": 269
     },
     "_skybox": {
-      "__id__": 264
+      "__id__": 270
     },
     "fog": {
-      "__id__": 265
+      "__id__": 271
     },
     "octree": {
-      "__id__": 266
+      "__id__": 272
     },
     "skin": {
-      "__id__": 267
+      "__id__": 273
     },
     "lightProbeInfo": {
-      "__id__": 268
+      "__id__": 274
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false

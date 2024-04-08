@@ -1,4 +1,4 @@
-import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle, Sprite, Color } from 'cc';
+import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle, Sprite, Color, UIOpacity } from 'cc';
 import { RegisterComponent, UnregisterComponent, UpdateScheme } from './Reactivity.Code';
 import { DynamicBindBaseCode } from './DynamicBindBase.Code';
 const { ccclass, property } = _decorator;
@@ -8,7 +8,8 @@ export enum EnBinderType{
 	Repeater,
 	ItemBinder,
 	Visibility,
-	Color
+	Color,
+	Opacity
 }
 
 export enum EnBindMode{
@@ -89,6 +90,7 @@ export class SchemeBinderComponent extends Component {
 	protected onLoad(): void {
 		switch(this.BinderType){
 			case EnBinderType.Color:
+			case EnBinderType.Opacity:
 			case EnBinderType.Binder:
 				this._initBinder();
 				break;
@@ -143,6 +145,8 @@ export class SchemeBinderComponent extends Component {
 				if(a)
 					this._componentType = c;
 			});
+		} else if(this.BinderType == EnBinderType.Opacity){
+			this._componentType = UIOpacity;
 		}else{
 			SchemeBinderComponent._supportedComponents.forEach((c)=>{
 				let a = this.getComponent(c);
@@ -179,6 +183,9 @@ export class SchemeBinderComponent extends Component {
 				break;
 			case EnBinderType.Color:
 				this._updateColor(value);
+				break;
+			case EnBinderType.Opacity:
+				this._updateOpacity(value);
 				break;
 		}
 	}
@@ -259,6 +266,13 @@ export class SchemeBinderComponent extends Component {
 			this.node.getComponent(Sprite).color = color;
 		else if(this._componentType == Label)
 			this.node.getComponent(Label).color = color;
+	}
+
+	private _updateOpacity(value:number){
+		let op = this.node.getComponent(UIOpacity);
+		if(op){
+			op.opacity = value;
+		}
 	}
 
 	onDestroy(): void {

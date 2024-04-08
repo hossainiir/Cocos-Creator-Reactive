@@ -27,6 +27,9 @@ export class UserDataScheme extends SchemeBase implements IUserData {
   @Reactive('progress')
   progress:number=0.3;
 
+  @Reactive('opacity')
+  opacity:number=100;
+
   @Reactive('achievements')
   achievements: AchievementModel[]=[];
 
