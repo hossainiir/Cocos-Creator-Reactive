@@ -1,4 +1,4 @@
-import { _decorator, CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle, Sprite, Color, UIOpacity } from 'cc';
+import { _decorator, Vec3 ,CCString, Component, EditBox, Enum, instantiate, Label, Node, ProgressBar, RichText, Slider, Toggle, Sprite, Color, UIOpacity } from 'cc';
 import { RegisterComponent, UnregisterComponent, UpdateScheme } from './Reactivity.Code';
 import { DynamicBindBaseCode } from './DynamicBindBase.Code';
 const { ccclass, property } = _decorator;
@@ -9,7 +9,8 @@ export enum EnBinderType{
 	ItemBinder,
 	Visibility,
 	Color,
-	Opacity
+	Opacity,
+	Position
 }
 
 export enum EnBindMode{
@@ -19,7 +20,7 @@ export enum EnBindMode{
 
 @ccclass('SchemeBinderComponent')
 export class SchemeBinderComponent extends Component {
-	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | typeof Sprite | null = null;
+	private _componentType:typeof Component|typeof Label|typeof RichText|typeof EditBox | typeof ProgressBar| typeof Slider | typeof Toggle | typeof Sprite | typeof Node | null = null;
 	private static readonly _supportedComponents:typeof Component[]=[Label,EditBox,RichText,ProgressBar,Slider,Toggle];
 	private static readonly _supportedColorComponents:typeof Component[]=[Label,Sprite];
 	@property({type:Enum(EnBinderType)})
@@ -89,6 +90,7 @@ export class SchemeBinderComponent extends Component {
 
 	protected onLoad(): void {
 		switch(this.BinderType){
+			case EnBinderType.Position:
 			case EnBinderType.Color:
 			case EnBinderType.Opacity:
 			case EnBinderType.Binder:
@@ -147,6 +149,8 @@ export class SchemeBinderComponent extends Component {
 			});
 		} else if(this.BinderType == EnBinderType.Opacity){
 			this._componentType = UIOpacity;
+		}else if(this.BinderType == EnBinderType.Position){
+			this._componentType = Node;
 		}else{
 			SchemeBinderComponent._supportedComponents.forEach((c)=>{
 				let a = this.getComponent(c);
@@ -186,6 +190,9 @@ export class SchemeBinderComponent extends Component {
 				break;
 			case EnBinderType.Opacity:
 				this._updateOpacity(value);
+				break;
+			case EnBinderType.Position:
+				this._updatePosition(value);
 				break;
 		}
 	}
@@ -273,6 +280,10 @@ export class SchemeBinderComponent extends Component {
 		if(op){
 			op.opacity = value;
 		}
+	}
+
+	private _updatePosition(value:Vec3){
+		this.node.setPosition(value);
 	}
 
 	onDestroy(): void {

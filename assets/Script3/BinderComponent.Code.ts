@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, Node } from 'cc';
+import { _decorator, Component, Label, Node, Vec3 } from 'cc';
 import { UserDataModel, UserDataScheme } from './Models/UserDataReactive.Code';
 import { SchemeBase } from './Core/SchemeBase.Code';
 import { Address } from './Models/Address.Code';
@@ -29,6 +29,9 @@ export class BinderComponentCode extends Component {
 		this.schedule(()=>{
 			this.data.resources.food.amount += this.data.resources.food.production
 			this.data.resources.steel.amount += this.data.resources.steel.production
+			this.data.Position = new Vec3(this.data.Position.x+10,50,0);
+			if(this.data.opacity >=0)
+				this.data.opacity -= 5;
 		},1);
 	}
 

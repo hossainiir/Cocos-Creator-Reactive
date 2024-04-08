@@ -3,7 +3,7 @@ import { SchemeBase } from "../Core/SchemeBase.Code";
 import { Reactive } from "../Core/ReactiveDecorator.Code";
 import { makeReactive } from "../Core/Reactivity.Code";
 import { ResourceModel } from "./ResourceModel.Code";
-import { Color } from "cc";
+import { Color, Vec3 } from "cc";
 
 export interface IUserData{
   name: string;
@@ -47,6 +47,9 @@ export class UserDataScheme extends SchemeBase implements IUserData {
 
   @Reactive("spriteColor")
   spriteColor: Color = new Color().fromHEX("#44FFFF");
+
+  @Reactive("Position")
+  Position: Vec3 = new Vec3(0,0,0);
   
   constructor(schemeName:string){
     super(schemeName);
