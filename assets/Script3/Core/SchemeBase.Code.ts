@@ -4,7 +4,10 @@ export class SchemeBase{
     this.__SchemeName = schemeName;
   }
 
-  MakeReactive():any{}
+	MakeReactive():any{
+		return makeReactive(this,this.__SchemeName);		
+	}
+	
   public static update(obj:any,newValue:any){
     if (typeof newValue !== 'object' || newValue === null || !obj) {
       return;
