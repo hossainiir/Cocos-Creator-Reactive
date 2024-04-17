@@ -57,7 +57,7 @@ export class SchemeBinderComponent extends Component {
 			return (this.BinderType != EnBinderType.ItemBinder) && this.BindMode == EnBindMode.Dynamic;
 		}
 	})
-	SchemeNameHolder:string="";
+	SchemeNameHolder:string="schemeName";
 
 	@property(CCString)
 	PropertyName:string="";
